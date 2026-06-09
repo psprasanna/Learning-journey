@@ -55,6 +55,29 @@ async function myFunction() {
     }
 }
 
-console.log('A');
-myFunction();
-console.log('c');
+// console.log('A');
+// myFunction();
+// console.log('c');
+
+//New async
+
+const loginPromise = new Promise((resolve, reject) =>{
+    isLogin = false;
+
+    if(isLogin){
+        resolve("Logged in");
+    } else {
+        reject("Not Logged in");
+    }
+})
+
+async function waitingTime(){
+    try{
+        const response = await loginPromise
+        console.log(response);
+    } catch(error) {
+        console.log( error);
+    }
+}
+
+waitingTime();

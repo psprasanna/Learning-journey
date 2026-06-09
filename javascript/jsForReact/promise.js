@@ -43,6 +43,7 @@ const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=40.71288&longitu
 
 let isLoading = true;
 
+/*
 fetch(apiUrl)
     .then(response => {
         if(!response.ok){
@@ -60,4 +61,22 @@ fetch(apiUrl)
     .finally(()=> {
         //runs once the promise is settled
         isLoading = false;
+    })
+*/
+    // New Promise 
+    const loginPromise = new Promise((resolve, reject) =>{
+        isLogin = true;
+
+        if(isLogin){
+            resolve("Logged in");
+        } else {
+            reject("Not Logged in");
+        }
+    })
+
+    loginPromise.then(response =>{
+        console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
     })
