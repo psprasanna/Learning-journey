@@ -1,8 +1,8 @@
-function footer(){
+function Footer(){
     return (
-        <Footer>Footer</Footer>
+        <p>Copyright 2026</p>
     )
 }
 
 
-export default footer;
+export default Footer;

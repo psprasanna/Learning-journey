@@ -5,13 +5,16 @@ const technologies = [
     "React"
 ];
 
-function content(){
+function Content(){
     return(
-        technologies.map(tech => (
-            <Content>{tech}</Content>
-        ))
+        <div>
+            { technologies.map(tech =>{
+                return <li key={tech}>{tech}</li>
+                })
+            }
+        </div>
     );
 }
 
 
-export default content
+export default Content;
