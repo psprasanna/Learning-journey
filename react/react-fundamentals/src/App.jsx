@@ -12,6 +12,9 @@ import TechnologyCard from './components/TechnologyCard'
 import ProjectCard from './components/ProjectCard'
 import CounterExample from './components/CounterExample'
 import EmployeeStatus from './components/EmployeeStatus'
+import FormsExample from './components/FormsExample'
+import EmployeeForm from './components/EmployeeForm'
+import Users from './components/Users'
 
 function App() {
   const name = "Prasanna"
@@ -121,7 +124,10 @@ function App() {
   return (
     <>
       <CounterExample />
-      <EmployeeStatus />
+      {/* <EmployeeStatus />
+      <FormsExample />
+      <EmployeeForm /> */}
+      <Users />
     </>
   )
 
