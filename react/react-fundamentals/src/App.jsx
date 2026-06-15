@@ -15,6 +15,8 @@ import EmployeeStatus from './components/EmployeeStatus'
 import FormsExample from './components/FormsExample'
 import EmployeeForm from './components/EmployeeForm'
 import Users from './components/Users'
+import EmployeeDirectory from './components/EmployeeDirectory'
+import EmpForm from './components/EmpForm'
 
 function App() {
   const name = "Prasanna"
@@ -123,11 +125,12 @@ function App() {
 
   return (
     <>
-      <CounterExample />
+      {/* <CounterExample /> */}
       {/* <EmployeeStatus />
       <FormsExample />
-      <EmployeeForm /> */}
-      <Users />
+      <EmployeeForm />
+      <Users /> */}
+      <EmployeeDirectory />
     </>
   )
 
