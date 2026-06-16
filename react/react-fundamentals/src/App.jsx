@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -18,124 +19,144 @@ import Users from './components/Users'
 import EmployeeDirectory from './components/EmployeeDirectory'
 import EmpForm from './components/EmpForm'
 
-function App() {
-  const name = "Prasanna"
-  const employees = [
-      {
-          id: 1,
-          name: "Prasanna",
-          role: "Full Stack Developer",
-          experience:2,
-          active: true
-      },
-      {
-          id: 2,
-          name: "Arun",
-          role: "Backend Developer",
-          experience:4,
-          active: true
-      },
-      {
-          id: 3,
-          name: "Karthik",
-          role: "Frontend Developer",
-          experience:1,
-          active: true
-      }
-  ];
-  const projects = [
-    {
-        id: 1,
-        name: "Todo App",
-        status: "Completed"
-    },
-    {
-        id: 2,
-        name: "Employee Management",
-        status: "In Progress"
-    }
-  ];
-  // return(
-  //   <>
-  //     <Header />
-  //     <Content />
-  //     {/* <EmployeeCard 
-  //       name="Prasanna" 
-  //       role="Full Stack" 
-  //       experience={2}
-  //       active={true}
-  //     />
+import Home from './pages/Home'
+import Employees from './pages/Employees'
+import Profile from './pages/Profile'
+import Navbar from './components/Navbar'
 
-  //     <EmployeeCard
-  //       name="Arun"
-  //       role="Backend Developer"
-  //       experience={3}
-  //       active={false}
-  //     /> */}
-  //     {/* Rendering multiple employees by using map */}
-  //     {/* {
-  //       employees.map(employee =>{
-  //         return <EmployeeCard 
-  //             key={employee.id}
-  //             name = {employee.name} 
-  //             role = {employee.role}
-  //             experience={employee.experience}
-  //             active={employee.active}
-  //           />
-  //       })
-  //     } */}
-  //     <div>
-  //       {
-  //         employees.map(employee =>(
-  //           <EmployeeCard 
-  //             key={employee.id}
-  //             name={employee.name}
-  //             role={employee.role}
-  //             experience={employee.experience}
-  //             active={employee.active}
-  //           />
-  //         ))
-  //       }
-  //     </div>
+//Components 
+// function App() {
+//   const name = "Prasanna"
+//   const employees = [
+//       {
+//           id: 1,
+//           name: "Prasanna",
+//           role: "Full Stack Developer",
+//           experience:2,
+//           active: true
+//       },
+//       {
+//           id: 2,
+//           name: "Arun",
+//           role: "Backend Developer",
+//           experience:4,
+//           active: true
+//       },
+//       {
+//           id: 3,
+//           name: "Karthik",
+//           role: "Frontend Developer",
+//           experience:1,
+//           active: true
+//       }
+//   ];
+//   const projects = [
+//     {
+//         id: 1,
+//         name: "Todo App",
+//         status: "Completed"
+//     },
+//     {
+//         id: 2,
+//         name: "Employee Management",
+//         status: "In Progress"
+//     }
+//   ];
+//   // return(
+//   //   <>
+//   //     <Header />
+//   //     <Content />
+//   //     {/* <EmployeeCard 
+//   //       name="Prasanna" 
+//   //       role="Full Stack" 
+//   //       experience={2}
+//   //       active={true}
+//   //     />
 
-  //     <TechnologyCard />
+//   //     <EmployeeCard
+//   //       name="Arun"
+//   //       role="Backend Developer"
+//   //       experience={3}
+//   //       active={false}
+//   //     /> */}
+//   //     {/* Rendering multiple employees by using map */}
+//   //     {/* {
+//   //       employees.map(employee =>{
+//   //         return <EmployeeCard 
+//   //             key={employee.id}
+//   //             name = {employee.name} 
+//   //             role = {employee.role}
+//   //             experience={employee.experience}
+//   //             active={employee.active}
+//   //           />
+//   //       })
+//   //     } */}
+//   //     <div>
+//   //       {
+//   //         employees.map(employee =>(
+//   //           <EmployeeCard 
+//   //             key={employee.id}
+//   //             name={employee.name}
+//   //             role={employee.role}
+//   //             experience={employee.experience}
+//   //             active={employee.active}
+//   //           />
+//   //         ))
+//   //       }
+//   //     </div>
 
-  //     <div>
-  //       {
-  //         projects.map( project => (
-  //           <ProjectCard 
-  //             key={project.id}
-  //             name={project.name}
-  //             status={project.status}
-  //           />
-  //         ))
-  //       }
-  //     </div>
+//   //     <TechnologyCard />
+
+//   //     <div>
+//   //       {
+//   //         projects.map( project => (
+//   //           <ProjectCard 
+//   //             key={project.id}
+//   //             name={project.name}
+//   //             status={project.status}
+//   //           />
+//   //         ))
+//   //       }
+//   //     </div>
 
 
-  //     <UserProfile 
-  //       name={"Karthi"}
-  //       city={"Chennai"}
-  //       company={"xyz"}
-  //     />
-  //     <Footer /> 
+//   //     <UserProfile 
+//   //       name={"Karthi"}
+//   //       city={"Chennai"}
+//   //       company={"xyz"}
+//   //     />
+//   //     <Footer /> 
 
-  //   </>
-  // )
+//   //   </>
+//   // )
 
+//   return (
+//     <>
+//       {/* <CounterExample /> */}
+//       {/* <EmployeeStatus />
+//       <FormsExample />
+//       <EmployeeForm />
+//       <Users /> */}
+//       <EmployeeDirectory />
+//     </>
+//   )
+
+  
+  
+// }
+
+//Routes
+function App(){
   return (
-    <>
-      {/* <CounterExample /> */}
-      {/* <EmployeeStatus />
-      <FormsExample />
-      <EmployeeForm />
-      <Users /> */}
-      <EmployeeDirectory />
-    </>
+    <BrowserRouter>
+      <Navbar />      
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='/employees' element={<Employees/>} />
+      </Routes>
+    
+    </BrowserRouter>
   )
-
-  
-  
 }
-
 export default App

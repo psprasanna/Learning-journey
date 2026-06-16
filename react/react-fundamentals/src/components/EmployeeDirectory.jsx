@@ -27,6 +27,15 @@ function EmployeeDirectory(){
         setEmployees(prev => [...prev, newEmployee] )
     }
 
+    const toggleStatus = (id) => {
+        const updateEmployees = employees.map(emp =>
+            emp.id === id ? {
+                ...emp, active: !emp.active
+            } : emp
+        )
+        setEmployees(updateEmployees);
+    }
+
     // useEffect(()=>{
     //     try{
     //         async function filterEmployees(filterState) {
@@ -60,6 +69,7 @@ function EmployeeDirectory(){
                         name={emp.name}
                         role={emp.role}
                         active={emp.active}
+                        toggleStatus = {toggleStatus}
                     />
                 ))
             }
