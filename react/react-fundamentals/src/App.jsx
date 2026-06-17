@@ -23,6 +23,7 @@ import Home from './pages/Home'
 import Employees from './pages/Employees'
 import Profile from './pages/Profile'
 import Navbar from './components/Navbar'
+import EmployeeDetails from './pages/EmployeeDetails'
 
 //Components 
 // function App() {
@@ -154,6 +155,7 @@ function App(){
         <Route path='/' element={<Home/>} />
         <Route path='/profile' element={<Profile/>} />
         <Route path='/employees' element={<Employees/>} />
+        <Route path='/employees/:id' element={<EmployeeDetails/>}/>
       </Routes>
     
     </BrowserRouter>
