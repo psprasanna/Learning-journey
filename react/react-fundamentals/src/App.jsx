@@ -25,6 +25,9 @@ import Profile from './pages/Profile'
 import Navbar from './components/Navbar'
 import EmployeeDetails from './pages/EmployeeDetails'
 
+import UserContext from './context/UserContext'
+import SideBar from './components/Sidebar'
+
 //Components 
 // function App() {
 //   const name = "Prasanna"
@@ -147,18 +150,48 @@ import EmployeeDetails from './pages/EmployeeDetails'
 // }
 
 //Routes
-function App(){
-  return (
-    <BrowserRouter>
-      <Navbar />      
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/profile' element={<Profile/>} />
-        <Route path='/employees' element={<Employees/>} />
-        <Route path='/employees/:id' element={<EmployeeDetails/>}/>
-      </Routes>
+// function App(){
+//   return (
+//     <BrowserRouter>
+//       <Navbar />      
+//       <Routes>
+//         <Route path='/' element={<Home/>} />
+//         <Route path='/profile' element={<Profile/>} />
+//         <Route path='/employees' element={<Employees/>} />
+//         <Route path='/employees/:id' element={<EmployeeDetails/>}/>
+//       </Routes>
     
-    </BrowserRouter>
+//     </BrowserRouter>
+//   )
+// }
+
+//Context API
+function App(){
+  const user = {
+      name: "Prasanna",
+      // role: "Full Stack Developer"
+      role: "React Learner"
+  };
+
+  return (
+    <>
+      <BrowserRouter>
+        <UserContext.Provider value={user}>
+
+        <Navbar />      
+
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/employees' element={<Employees/>} />
+        </Routes>
+
+        <SideBar/>
+
+        </UserContext.Provider>
+      </BrowserRouter>
+    </>
   )
 }
+
 export default App
