@@ -28,6 +28,9 @@ import EmployeeDetails from './pages/EmployeeDetails'
 import UserContext from './context/UserContext'
 import SideBar from './components/Sidebar'
 
+import Counter from './components/Counter'
+import Toggle from './components/Toggle'
+
 //Components 
 // function App() {
 //   const name = "Prasanna"
@@ -166,30 +169,40 @@ import SideBar from './components/Sidebar'
 // }
 
 //Context API
-function App(){
-  const user = {
-      name: "Prasanna",
-      // role: "Full Stack Developer"
-      role: "React Learner"
-  };
+// function App(){
+//   const user = {
+//       name: "Prasanna",
+//       // role: "Full Stack Developer"
+//       role: "React Learner"
+//   };
 
+//   return (
+//     <>
+//       <BrowserRouter>
+//         <UserContext.Provider value={user}>
+
+//         <Navbar />      
+
+//         <Routes>
+//           <Route path='/' element={<Home/>} />
+//           <Route path='/profile' element={<Profile/>} />
+//           <Route path='/employees' element={<Employees/>} />
+//         </Routes>
+
+//         <SideBar/>
+
+//         </UserContext.Provider>
+//       </BrowserRouter>
+//     </>
+//   )
+// }
+
+//hook 
+function App(){
   return (
     <>
-      <BrowserRouter>
-        <UserContext.Provider value={user}>
-
-        <Navbar />      
-
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/profile' element={<Profile/>} />
-          <Route path='/employees' element={<Employees/>} />
-        </Routes>
-
-        <SideBar/>
-
-        </UserContext.Provider>
-      </BrowserRouter>
+      <Counter />
+      <Toggle />
     </>
   )
 }
